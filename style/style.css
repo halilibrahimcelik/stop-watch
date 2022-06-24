@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+:root{
+    --bg-color:#DEE4E7;
+    --dark-blue:#42709A;
+    --soft-blue:#4AAFD2;
+    --light-grey:#faf6f5;
+    --light-blue:#56BBD5;
+}
+/* Color Theme Swatches in Hex */
+body{
+    background-color: var(--bg-color);
+    height: 100vh;
+}
+
+
+.container{
+max-width:  30rem;
+    margin:4rem auto;
+
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding:2rem
+}
+.time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:0.2rem
+
+}
+.watch {
+    background-color: var(--light-grey);
+    padding:0.8rem;
+    border-radius: 10px;
+   
+    font-weight: bold;
+    
+}
