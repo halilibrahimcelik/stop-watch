@@ -42,9 +42,54 @@ max-width:  30rem;
 }
 .watch {
     background-color: var(--light-grey);
-    padding:0.8rem;
+    padding:2rem;
     border-radius: 10px;
    
     font-weight: bold;
     
+}
+.all-buttons{
+    
+    display: flex;
+    justify-content: center;
+    gap:2rem;
+    margin-top: 1.3rem;
+
+    
+}
+.all-buttons button{
+    cursor: pointer;
+    border: none;
+    padding:0.8rem 2rem;
+    border-radius: 8px;
+    color: #faf6f5;
+    font-weight: bold;
+    transition: all 0.3s ease-in;
+}
+.btn-start{
+    background-color: #42709A;
+ 
+}
+.btn-stop{
+    background-color: #4AAFD2;
+}
+.btn-reset{
+    background-color: rgb(0, 116, 35);
+}
+button:hover{
+    opacity: 0.7;
+}
+@media screen and (max-width:760px){
+    body{
+        height: auto;
+    }
+    .container{
+       width: fit-content
+    }
+    .watch{
+        padding: 0.5rem;
+    }
+    .all-buttons button{
+        padding:0.2rem;
+    }
 }
