@@ -4,7 +4,10 @@ let int = null;
 const startBtn = document.querySelector(".btn-start");
 const stopBtn = document.querySelector(".btn-stop");
 const resetBtn = document.querySelector(".btn-reset");
-
+const hourSpan = document.querySelector(".time__hour");
+const minuteSpan = document.querySelector(".time__minute");
+const secondSpan = document.querySelector(".time__second");
+const milisecondSpan = document.querySelector(".time__miliseconds");
 startBtn.addEventListener("click", () => {
   if (int !== null) {
     clearInterval(int);
@@ -18,7 +21,10 @@ stopBtn.addEventListener("click", () => {
 resetBtn.addEventListener("click", () => {
   clearInterval(int);
   [milliseconds, second, minute, hour] = [0, 0, 0, 0];
-  timerRef.innerHTML = "00 : 00 : 00";
+  hourSpan.innerText = "00";
+  minuteSpan.innerText = "00";
+  secondSpan.innerText = "00";
+  milisecondSpan.innerText = "00";
 });
 function countdown() {
   milliseconds += 10;
@@ -30,16 +36,21 @@ function countdown() {
       minute++;
       if (minute == 60) {
         minute = 0;
+        hour++;
       }
     }
   }
-  let m = minute < 10 ? "0" + minute : minute;
-  let s = second < 10 ? "0" + second : second;
-  let ms =
+  let minuteText = minute < 10 ? "0" + minute : minute;
+  let secondText = second < 10 ? "0" + second : second;
+  let msText =
     milliseconds < 10
       ? "00" + milliseconds
       : milliseconds < 100
       ? "0" + milliseconds
       : milliseconds;
-  timerRef.innerHTML = ` ${m} : ${s} : ${ms}`;
+
+  hourSpan.innerText = hour;
+  minuteSpan.innerHTML = minuteText;
+  secondSpan.innerHTML = secondText;
+  milisecondSpan.innerHTML = msText;
 }
